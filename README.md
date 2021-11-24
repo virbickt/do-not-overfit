@@ -14,9 +14,10 @@ the target variable
 only takes binary inputs which is what makes it a *classification task*.
 
 # Summary
+<p style='text-align: justify;'> Since there were too many variables to be visually inspected for outliers, automatic outlier identification techniques (IsolationForest, EllipticEnvelope, OneClassSVM) have been employed. EllipticEnvelope provided a best improvement on the score by removing the least number of rows. </p>
 
-- Since there were too many variables to be visually inspected for outliers, automatic outlier identification techniques (IsolationForest, EllipticEnvelope, OneClassSVM) have been employed. EllipticEnvelope provided a best improvement on the score by removing the least number of rows.
-- In order to address the issue of imbalanced distribution of classes, a range of oversampling techniques have been applied. Out of 4 techniques (SMOTE, BorderlineSMOTE, SVMSMOTE and ADASYN), ADESYN led to the best cross-validation results. None of the techniques affected the results on public leaderboard.
+<p style='text-align: justify;'> In order to address the issue of imbalanced distribution of classes, a range of oversampling techniques have been applied. Out of 4 techniques (SMOTE, BorderlineSMOTE, SVMSMOTE and ADASYN), ADESYN led to the best cross-validation results. None of the techniques affected the results on public leaderboard.</p>
+- 
 - I used a range of models that differ in complexity in order to put the hypothesis that the simpler models should perform better to test. While simpler models (Logistic Regression and GaussianNB) did outperform models such as Random Forest, the trend to overfit has been similar both with respect to simple and complex models.
 - PyCaret was used to provide a perspective on how does our selection of models fare with respect to a larger range of models. It can be seen that models I selected outperformed most of the others models implemented by PyCaret.
 - The least succesful part of our project is that of feature selection as Rasgo which we used for calculating feature importances and dropping the least important features produced different results on each run. We have attempted to circumvent this problem by taking a union of features which have been selected for removal over the course of several runs. This way, we have reduced our feature space in half.
