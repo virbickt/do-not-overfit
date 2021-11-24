@@ -44,7 +44,7 @@ only takes binary inputs which is what makes it a *classification task*.
 
 # Licence
 
-The project is licenced under [MIT Licence]()
+The project is licenced under [GNU General Public Licence v3](LICENCE.md)
 
 # Contact
 
