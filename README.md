@@ -14,15 +14,19 @@ the target variable
 only takes binary inputs which is what makes it a *classification task*.
 
 # Summary
-<p style='text-align: justify;'> Since there were too many variables to be visually inspected for outliers, automatic outlier identification techniques (IsolationForest, EllipticEnvelope, OneClassSVM) have been employed. EllipticEnvelope provided a best improvement on the score by removing the least number of rows. </p>
+<p style='text-align: justify;'> Since there were too many variables to be visually inspected for outliers, automatic outlier identification techniques (IsolationForest, EllipticEnvelope, OneClassSVM) have been employed. EllipticEnvelope provided a best improvement on the score by removing the least number of rows.</p>
 
-<p style='text-align: justify;'> In order to address the issue of imbalanced distribution of classes, a range of oversampling techniques have been applied. Out of 4 techniques (SMOTE, BorderlineSMOTE, SVMSMOTE and ADASYN), ADESYN led to the best cross-validation results. None of the techniques affected the results on public leaderboard.</p>
-- 
-- I used a range of models that differ in complexity in order to put the hypothesis that the simpler models should perform better to test. While simpler models (Logistic Regression and GaussianNB) did outperform models such as Random Forest, the trend to overfit has been similar both with respect to simple and complex models.
-- PyCaret was used to provide a perspective on how does our selection of models fare with respect to a larger range of models. It can be seen that models I selected outperformed most of the others models implemented by PyCaret.
-- The least succesful part of our project is that of feature selection as Rasgo which we used for calculating feature importances and dropping the least important features produced different results on each run. We have attempted to circumvent this problem by taking a union of features which have been selected for removal over the course of several runs. This way, we have reduced our feature space in half.
-- Out of all the attempts in our feature engineering part, only second-degree polynomials of the features that were found to be most important proved beneficial towards the score. Neither feature crosses nor polynomials of a higher degree led to any improvements. At this point we have reached the required score of `0.8` on public Kaggle leaderboard.
-- Lasso gave the best score (`8.36`) and also helped us to reach the required score on private scoreboard. This is most likely due to the fact that Lasso implements `l1` regularization which brings the coefficients for the least important features to `0`, thus zeroing out their constribution in predictions. While this means that we were not succesful in identifying the list of features the removal of which would have lead to the highest score, this is surprising since we have also implemented `l1` regularization when using Logistic Regression.
+<p style='text-align: justify;'>In order to address the issue of imbalanced distribution of classes, a range of oversampling techniques have been applied. Out of 4 techniques (SMOTE, BorderlineSMOTE, SVMSMOTE and ADASYN), ADESYN led to the best cross-validation results. None of the techniques affected the results on public leaderboard.</p>
+
+<p style='text-align: justify;'> I used a range of models that differ in complexity in order to put the hypothesis that the simpler models should perform better to test. While simpler models (Logistic Regression and GaussianNB) did outperform models such as Random Forest, the trend to overfit has been similar both with respect to simple and complex models.</p>
+
+<p style='text-align: justify;'>PyCaret was used to provide a perspective on how does our selection of models fare with respect to a larger range of models. It can be seen that models I selected outperformed most of the others models implemented by PyCaret.</p>
+
+<p style='text-align: justify;'>The least succesful part of our project is that of feature selection as Rasgo which we used for calculating feature importances and dropping the least important features produced different results on each run. We have attempted to circumvent this problem by taking a union of features which have been selected for removal over the course of several runs. This way, we have reduced our feature space in half.</p>
+
+<p style='text-align: justify;'>Out of all the attempts in our feature engineering part, only second-degree polynomials of the features that were found to be most important proved beneficial towards the score. Neither feature crosses nor polynomials of a higher degree led to any improvements. At this point we have reached the required score of `0.8` on public Kaggle leaderboard.</p>
+
+<p style='text-align: justify;'>Lasso gave the best score (`8.36`) and also helped us to reach the required score on private scoreboard. This is most likely due to the fact that Lasso implements `l1` regularization which brings the coefficients for the least important features to `0`, thus zeroing out their constribution in predictions. While this means that we were not succesful in identifying the list of features the removal of which would have lead to the highest score, this is surprising since we have also implemented `l1` regularization when using Logistic Regression.</p>
 
 # Technologies
 - `scikit-learn`
