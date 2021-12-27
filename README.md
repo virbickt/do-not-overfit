@@ -7,11 +7,7 @@ The dataset provided is a 20000 <a href="https://www.codecogs.com/eqnedit.php?la
 | train.csv   | 250      | 301       | `float64` | 588.0 KB |
 | test.csv   | 19750   | 300        | `float64` | 45.2 MB |
 
-the target variable 
-
-<a href="https://www.codecogs.com/eqnedit.php?latex=y_n&space;\in&space;[0,1]" target="_blank"><img src="https://latex.codecogs.com/gif.latex?y_n&space;\in&space;[0,1]" title="y_n \in [0,1]" /></a>
-
-only takes binary inputs which is what makes it a *classification task*.
+the target variable only takes binary inputs which is what makes it a *classification task*.
 
 # Summary
 **1.** Since there were too many variables to be visually inspected for outliers, automatic outlier identification techniques (IsolationForest, EllipticEnvelope, OneClassSVM) have been employed. EllipticEnvelope provided a best improvement on the score by removing the least number of rows.
