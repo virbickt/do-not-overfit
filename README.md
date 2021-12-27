@@ -4,8 +4,8 @@ The dataset provided is a 20000 <a href="https://www.codecogs.com/eqnedit.php?la
 
 |    | rows      | columns | dtypes | memory usage|
 | -- | ----------- | ----------- | -- | -- |
-| train.csv   | 250      | 301       | `float64` | 588.0 KB |
-| test.csv   | 19750   | 300        | `float64` | 45.2 MB |
+| `train.csv`   | 250      | 301       | `float64` | 588.0 KB |
+| `test.csv`   | 19750   | 300        | `float64` | 45.2 MB |
 
 The target variable (which is only present in `train.csv`) only takes binary inputs which is what makes it a *classification task*.
 
